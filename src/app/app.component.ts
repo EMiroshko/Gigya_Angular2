@@ -9,7 +9,7 @@ import {ActivatedRoute} from '@angular/router';
   providers: [ AccountService ]
 })
 export class AppComponent implements OnInit {
-  title = 'app works!!!';
+  title = 'Account form';
   options = {
     loginIdentifierConflict: ''
   };
