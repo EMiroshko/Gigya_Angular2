@@ -1,0 +1,61 @@
+.btn {
+  display: inline-block;
+  padding: 5px 20px;
+  background-color: #00b8b8;
+  color: #000;
+  border-radius: 3px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: #7fffd4;
+}
+
+.btn:active {
+  position: relative;
+  top: 1px;
+  left: 1px;
+}
+
+.save_button {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.accountForm {
+  width: 420px;
+  margin: 10px auto;
+  border: 1px solid #999;
+  padding: 10px;
+}
+
+.accountForm div {
+  padding: 5px 0;
+}
+
+ label {
+  display: inline-block;
+  width: 200px;
+}
+
+.accountForm label {
+  display: inline-block;
+}
+
+input[type="text"],
+select {
+  width: 190px;
+  box-sizing: border-box;
+  padding: 0 3px;
+}
+
+.accountForm .error {
+  background-color: #8b0000;
+  color: #fff;
+  padding: 2px 10px;
+  border-radius: 2px;
+  font-size: 10px;
+  font-weight: 800;
+  display: inline-block;
+}

@@ -1,3 +1,91 @@
-<h1>
-  {{title}}
-</h1>
+<form id="accountForm" class="accountForm" action="">
+  <div>
+    <label for="allowUnverifiedLogin">Allow Unverified Login: </label>
+    <input type="checkbox"
+           id="allowUnverifiedLogin"
+           [(ngModel)]="options.allowUnverifiedLogin"
+           [ngModelOptions]="{standalone: true}"
+           [disabled]="readOnly"/>
+  </div>
+
+  <div>
+    <label for="defaultLanguage">Default Language: </label>
+    <input type="text"
+           id="defaultLanguage"
+           [(ngModel)]="options.defaultLanguage"
+           [ngModelOptions]="{standalone: true}"
+           [disabled]="readOnly"/>
+  </div>
+
+  <div>
+    <label for="loginIdentifierConflict">Login Identifier Conflict: </label>
+    <select name=""
+            id="loginIdentifierConflict"
+            [(ngModel)]="options.loginIdentifierConflict"
+            [ngModelOptions]="{standalone: true}"
+            [disabled]="readOnly">
+      <option *ngFor="let identifier of loginIdentifierArray" [ngValue]="identifier">{{identifier}}</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="loginIdentifiers">Login Identifiers: </label>
+    <input type="text"
+           id="loginIdentifiers"
+           [(ngModel)]="options.loginIdentifiers"
+           [ngModelOptions]="{standalone: true}"
+           [disabled]="readOnly"/>
+  </div>
+
+  <div>
+    <label for="preventLoginIDHarvesting">Prevent Login ID Harvesting: </label>
+    <input type="checkbox"
+           id="preventLoginIDHarvesting"
+           [(ngModel)]="options.preventLoginIDHarvesting"
+           [ngModelOptions]="{standalone: true}"
+           [disabled]="readOnly"/>
+  </div>
+
+  <div>
+    <label for="sendAccountDeletedEmail">Send Account Deleted Email: </label>
+    <input type="checkbox"
+           id="sendAccountDeletedEmail"
+           [(ngModel)]="options.sendAccountDeletedEmail"
+           [ngModelOptions]="{standalone: true}"
+           [disabled]="readOnly"/>
+  </div>
+
+  <div>
+    <label for="sendWelcomeEmail">Send Welcome Email: </label>
+    <input type="checkbox"
+           id="sendWelcomeEmail"
+           [(ngModel)]="options.sendWelcomeEmail"
+           [ngModelOptions]="{standalone: true}"
+           [disabled]="readOnly"/>
+  </div>
+
+  <div>
+    <label for="verifyEmail">Verify Email: </label>
+    <input type="checkbox"
+           id="verifyEmail"
+           [(ngModel)]="options.verifyEmail"
+           [ngModelOptions]="{standalone: true}"
+           [disabled]="readOnly"/>
+  </div>
+
+  <div>
+    <label for="verifyProviderEmail">Verify Email: </label>
+    <input type="checkbox"
+           id="verifyProviderEmail"
+           [(ngModel)]="options.verifyProviderEmail"
+           [ngModelOptions]="{standalone: true}"
+           [disabled]="readOnly"/>
+  </div>
+  <div class="error"
+       *ngIf="error">{{error}}</div>
+
+  <div class="save_button"
+       *ngIf="!readOnly">
+    <a href="#" class="btn" (click)="setPolicies($event)">Save</a>
+  </div>
+</form>
